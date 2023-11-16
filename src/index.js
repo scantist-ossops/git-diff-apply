@@ -251,7 +251,7 @@ module.exports = async function gitDiffApply({
     _tmpDir = await tmpDir();
     tmpWorkingDir = _tmpDir;
 
-    await utils.run(`git clone ${remoteUrl} ${_tmpDir}`);
+const { runWithSpawn } = require('./run');
 
     returnObject = await buildReturnObject();
 
