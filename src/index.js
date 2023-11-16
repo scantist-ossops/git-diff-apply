@@ -222,7 +222,7 @@ module.exports = async function gitDiffApply({
     _tmpDir = await tmpDir();
     tmpWorkingDir = _tmpDir;
 
-    await utils.run(`git clone ${remoteUrl} ${_tmpDir}`);
+const { runWithSpawn } = require('./run');
 
     // needed because we are going to be committing in here
     await gitConfigInit({ cwd: _tmpDir });
